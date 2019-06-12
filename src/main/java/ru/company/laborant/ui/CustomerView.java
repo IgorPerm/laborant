@@ -15,6 +15,7 @@ import com.vaadin.flow.server.Version;
 import org.springframework.util.StringUtils;
 import ru.company.laborant.jpa.dao.CustomerRepository;
 import ru.company.laborant.jpa.domain.Customer;
+import ru.company.laborant.jpa.domain.Folder;
 
 /**
  * @author Cheranev N.
@@ -66,7 +67,8 @@ public class CustomerView extends VerticalLayout {
         });
 
         // Instantiate and edit new Customer the new button is clicked
-        addNewBtn.addClickListener(e -> editor.editCustomer(new Customer("", "", "", "")));
+        addNewBtn.addClickListener(e -> editor.editCustomer(new Customer("",
+                "", "", "")));
 
         // Listen changes made by the editor, refresh data from backend
         editor.setChangeHandler(() -> {
